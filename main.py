@@ -13,17 +13,16 @@ tables_to_import = [
 ]
 yield_size = 500
 
-# create a parser object
 parser = argparse.ArgumentParser()
 
-# add arguments to the parser
+# arguments
 parser.add_argument("--meili", help="meilisearch api url (Default: http://localhost:7700)", default="http://localhost:7700")
 parser.add_argument("--key", help="api key", default=None)
 parser.add_argument("--sql", help="sqlite file path",type=str)
 parser.add_argument("--skip", help="skip to row",type=int, default=0)
 
 
-# parse the arguments from standard input
+# parse the args
 args = parser.parse_args()
 
 meili_url: str = args.meili
